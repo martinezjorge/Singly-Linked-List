@@ -110,17 +110,27 @@ LinkedList.prototype.remove = function(val){
 	prev.next = curr.next;
 };
 
+// method to print contents of the list in a nice format
 LinkedList.prototype.print = function() {
+	// string variable to hold the output
 	var output = '[';
+	// pointer pointing at the beginning of the list
 	var current = this.head;
+	// goes through the whole list
 	while(current !== null){
+		// concatenates the data in the node to the output variable
 		output += current.data;
+		// if there's another node
 		if(current.next !== null){
+			// add a , before the next value
 			output += ',';
 		}
+		// point to the next node
 		current = current.next;
 	}
+	// finish the output string
 	output += ']';
+	// print to console
 	console.log(output);
 };
 var list = new LinkedList();
