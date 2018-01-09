@@ -84,7 +84,7 @@ LinkedList.prototype.contains = function(val) {
 // this method will remove a value if it exists in the list
 LinkedList.prototype.remove = function(val){
 	// if value is not in the list then we're done
-	if(!this.cointains(val)){
+	if(!this.contains(val)){
 		return;
 	}
 	// if the first value of the list is what we're looking for
@@ -118,7 +118,7 @@ LinkedList.prototype.print = function() {
 		if(current.next !== null){
 			output += ',';
 		}
-		current += current.next;
+		current = current.next;
 	}
 	output += ']';
 	console.log(output);
@@ -129,9 +129,10 @@ list.append(10);
 list.append(15);
 list.append(20);
 list.print();
-//list.prepend(5);
-//list.print();
-//console.log(list.contains(7));
-//list.print();
-//console.log(list.size());
-//console.log(list.isEmpty());
+list.prepend(5);
+list.print();
+console.log(list.contains(7));
+list.print();
+console.log(list.size());
+console.log(list.isEmpty());
+list.remove(10);
